@@ -1,0 +1,31 @@
+MOVIES,Action,Comedy,Drama,Horror
+MUSIC,Pop,Rock,Hip Hop,Electronic
+TV SHOWS,Drama,Comedy,Reality,Crime
+VIDEO GAMES,Action,Adventure,RPG,Strategy
+BOOKS,Fiction,Non-fiction,Sci-Fi,Fantasy
+THEATER PLAYS,Comedy,Drama,Romance,Tragedy
+COMICS,Superhero,Manga,Graphic Novel,Webcomic
+PODCASTS,True Crime,Comedy,News,Interview
+BROADWAY MUSICALS,Les Misérables,The Phantom of the Opera,Hamilton,Wicked
+CARTOONS,Animated,Anime,CGI,Classic
+STAND-UP COMEDY,Observational,Improv,Dark humor,Clean comedy
+BOARD GAMES,Strategy,Party,Cooperative,Deck-building
+FILM DIRECTORS,Quentin Tarantino,Christopher Nolan,Martin Scorsese,Steven Spielberg
+ACTORS,Leonardo DiCaprio,Meryl Streep,Denzel Washington,Scarlett Johansson
+ACTRESSES,Angelina Jolie,Jennifer Lawrence,Natalie Portman,Emma Stone
+MUSICIANS,Beyoncé,Michael Jackson,Eminem,Taylor Swift
+BANDS,The Beatles,Queen,AC/DC,Pink Floyd
+SINGERS,Adele,Ed Sheeran,Bruno Mars,Rihanna
+SONGWRITERS,Bob Dylan,Paul McCartney,Stevie Wonder,Taylor Swift
+MOVIE GENRES,Romantic Comedy,Adventure,Animation,Fantasy
+MUSIC GENRES,Rap,Indie,Reggae,Blues
+TV SHOW GENRES,Sci-Fi,Fantasy,Documentary,Crime
+VIDEO GAME GENRES,First-person Shooter,Open World,Survival Horror,Racing
+BOOK GENRES,Young Adult,Historical Fiction,Thriller,Horror
+THEATER GENRES,Musical Comedy,Tragedy,Farce,Drama
+COMIC GENRES,Superhero,Horror,Romance,Sci-Fi
+PODCAST GENRES,True Crime,News,Comedy,History
+BROADWAY GENRES,Musical Comedy,Drama,Romance,Fantasy
+CARTOON GENRES,Adventure,Comedy,Fantasy,Sci-Fi
+STAND-UP COMEDY GENRES,Observational,Dark humor,Clean comedy,Political satire
+BOARD GAME GENRES,Strategy,Party,Cooperative,Deck-building

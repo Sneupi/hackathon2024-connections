@@ -1,0 +1,49 @@
+BOTTLE,Water,Wine,Soda,Beer
+BELT,Leather,Fabric,Braided,Chain
+RING,Necklace,Earring,Bracelet,Pendant
+BOWL,Soup,Salad,Mixing,Fruit
+BALL,Football,Basketball,Soccer,Tennis
+PEN,Ballpoint,Fountain,Gel,Marker
+SCULPTURE,Statue,Bust,Relief,Abstract sculpture
+URN,Vase,Jar,Pot,Cremation
+DESK,Writing,Computer,Standing,Executive
+CANDLE,Candlestick,Candle holder,Taper,Pillar
+PAINTING,Oil,Watercolor,Acrylic,Canvas
+CURTAIN,Window,Shower,Door,Blackout
+KEY,Keychain,Lock,Padlock,Keycard
+PHONE,Smartphone,Feature,Flip,Pager
+KNIFE,Steak,Butter,Serrated,Paring
+COMPUTER,Laptop,Desktop,Tablet,Server
+BLANKET,Throw,Quilted,Fleece,Electric
+SHOE,Sneaker,Boot,Heel,Sandal
+PILLOW,Throw,Bed,Body,Neck
+SOCK,Socks,Stockings,Anklet,Knee-highs
+TOWEL,Bath,Hand,Beach,Kitchen
+PLATE,Dinner,Salad,Side,Bread
+FORK,Spoon,Knife,Chopsticks,Spork
+SPOON,Teaspoon,Tablespoon,Dessert,Soup
+GUITAR,Acoustic,Electric,Bass,Classical
+CUP,Coffee,Tea,Espresso,Cappuccino
+TABLE,Dining,End,Coffee,Console
+BOOK,Novel,Dictionary,Encyclopedia,Atlas
+MICROPHONE,Dynamic,Condenser,Wireless,USB
+GLASS,Window,Mirror,Drinking glass,Spectacle
+HEADPHONE,Over-ear,In-ear,On-ear,earbuds
+SPEAKER,Bookshelf,Floor-standing,Portable,Soundbar
+GLOVE,Baseball,Gardening,Winter,Boxing
+PIANO,Grand,Upright,Digital,Keyboard
+FRAME,Picture,Poster,Photo,Art
+HAT,Cap,Beanie,Sunhat,Fedora
+CLOCK,Wall,Alarm,Cuckoo,Grandfather
+RUG,Area,Runner,Outdoor,Shag
+COUCH,Loveseat,Sectional,Chaise,Divan
+CHAIR,Sofa,Stool,Bench,Recliner
+NOTEBOOK,Journal,Sketchbook,Planner,Notepad
+VASE,Flower,Decorative,Ceramic,Glass
+WATCH,Wristwatch,Pocket,Smartwatch,Analog
+LAMP,Desk,Floor,Table,Reading
+CAMERA,DSLR,Mirrorless,Compact,Action
+BAG,Backpack,Tote,Messenger,Duffel
+CAR,SUV,Truck,Van,Convertible
+TOY,Doll,Action figure,Car,Train
+HOUSE,Villa,Mansion,Cottage,Bungalow
