@@ -252,40 +252,41 @@ def main():
     set_appearance_mode("dark")
 
     button_grid = ButtonGrid(root, grid_data)
-    button_grid.pack(side=tk.RIGHT, padx=10, pady=10)
+    button_grid.pack(side=tk.RIGHT, padx=10, fill=tk.BOTH, expand=True, pady=10)
 
     theme_label = tk.Label(root, text="Pick a Theme", bg='#242424', fg='white', font=('Arial', 25))
-    theme_label.pack(side=tk.TOP, pady=10)
+    theme_label.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=10)
 
     animal = CTkButton(root, text="Animals", command=lambda: button_grid.load_new_data("Animals.csv"),
                        fg_color="transparent", hover_color='#484848', border_width=2, border_color='#484848')
-    animal.pack(side=tk.TOP, pady=10)
+    animal.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=10)
 
     entertainment = CTkButton(root, text="Entertainment",
                               command=lambda: button_grid.load_new_data("Entertainment.csv"),
                               fg_color="transparent", hover_color='#484848', border_width=2, border_color='#484848')
-    entertainment.pack(side=tk.TOP, pady=5)
+    entertainment.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)
 
     food = CTkButton(root, text="Food", command=lambda: button_grid.load_new_data("Food.csv"),
                      fg_color="transparent", hover_color='#484848', border_width=2, border_color='#484848')
-    food.pack(side=tk.TOP, pady=5)
+    food.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)
 
     objects = CTkButton(root, text="Objects", command=lambda: button_grid.load_new_data("Objects.csv"),
                         fg_color="transparent", hover_color='#484848', border_width=2, border_color='#484848')
-    objects.pack(side=tk.TOP, pady=5)
+    objects.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)
 
     options_label = tk.Label(root, text="Player Options", bg='#242424', fg='white', font=('Arial', 25))
-    options_label.pack(side=tk.TOP, pady=5)
+    options_label.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)  # Reduced padding
 
     shuffle_button = CTkButton(root, text="Shuffle", command=button_grid.shuffle_grid,
                                fg_color="transparent", hover_color='#800080', border_width=2, border_color='#800080')
-    shuffle_button.pack(side=tk.LEFT, expand=True, padx=5, pady=5)
+    shuffle_button.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)  # Packed to the top
 
     mark_solved_button = CTkButton(root, text="Submit", command=button_grid.submit,
                                    fg_color="transparent", hover_color='#26B170', border_width=2,
                                    border_color='#26B170')
-    mark_solved_button.pack(side=tk.LEFT, expand=True, padx=5, pady=5)
+    mark_solved_button.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)  # Packed to the top
 
+    root.resizable(False, False)
     root.mainloop()
 
 
