@@ -7,8 +7,9 @@ from customtkinter import *
 
 
 class GameButton(tk.Button):
-    def __init__(self, master, row, col, name, color='white', disabled=False):
-        super().__init__(master, text=name, command=self.toggle_color, width=15, height=6)
+    def __init__(self, master, row, col, name, color='#242424', disabled=False):
+        super().__init__(master, text=name, command=self.toggle_color, width=15, height=6, fg='white',
+                         font=('Arial', 20), activebackground=color, activeforeground='white')
         self.row = row
         self.col = col
         self.name = name
@@ -19,10 +20,10 @@ class GameButton(tk.Button):
     def toggle_color(self):
         if self.disabled:
             return
-        if self.color == 'white' and self.master.count_dark_gray_buttons() < 4:
-            self.color = 'dark gray'
+        if self.color == '#242424' and self.master.count_dark_gray_buttons() < 4:
+            self.color = '#484848'
         else:
-            self.color = 'white'
+            self.color = '#242424'
         self.update_state()
 
     def mark_solved(self, color='light green'):
@@ -46,11 +47,14 @@ class ButtonGrid(tk.Frame):
         self.mistakes_left = 4
         self.init_grid()
         self.solved_colors = cycle(['light green', 'light blue', 'pink', 'light goldenrod'])
+        self.configure(bg='#242424')
 
         self.mistakes_label = tk.Label(self, text=f"Mistakes left: {self.mistakes_left}")
         self.mistakes_label.grid(row=0, column=0, columnspan=4)
+        self.mistakes_label.config(bg='#242424', fg='white', font=('Arial', 20))
         self.message_label = tk.Label(self)
         self.message_label.grid(row=1, column=0, columnspan=4)
+        self.message_label.config(bg='#242424', fg='white', font=('Arial', 20))
 
         self.shuffle_grid()
 
@@ -62,7 +66,7 @@ class ButtonGrid(tk.Frame):
                 button.grid(row=i + 2, column=j, padx=2, pady=2)
 
     def count_dark_gray_buttons(self):
-        count = sum(1 for button in self.buttons if button.color == 'dark gray')
+        count = sum(1 for button in self.buttons if button.color == '#484848')
         return count
 
     def shuffle_grid(self):
@@ -87,12 +91,12 @@ class ButtonGrid(tk.Frame):
             self.disabled_buttons.remove(button)
 
     def set_dark_gray_button(self, button):
-        button.color = 'dark gray'
+        button.color = '#484848'
         self.dark_gray_buttons.add(button)
 
     def clear_dark_gray_buttons(self):
         for button in self.dark_gray_buttons:
-            button.color = 'white'
+            button.color = '#242424'
         self.dark_gray_buttons.clear()
         self.update_grid_state()
 
@@ -161,7 +165,7 @@ class ButtonGrid(tk.Frame):
             return
 
         # get selected buttons in the grid
-        selected_buttons = [button for button in self.buttons if button.color == 'dark gray']
+        selected_buttons = [button for button in self.buttons if button.color == '#484848']
 
         # Check if exactly 4 buttons are selected
         if len(selected_buttons) == 4:
@@ -251,27 +255,29 @@ def main():
     button_grid.pack(side=tk.RIGHT, padx=10, pady=10)
 
     animal = CTkButton(root, text="Animals", command=lambda: button_grid.load_new_data("Animals.csv"),
-                       fg_color="transparent",hover_color='#8B0000',border_width=2,border_color='#8B0000')
+                       fg_color="transparent", hover_color='#8B0000', border_width=2, border_color='#8B0000')
     animal.pack(side=tk.TOP, pady=10)
 
-    entertainment = CTkButton(root, text="Entertainment", command=lambda: button_grid.load_new_data("Entertainment.csv"),
-                              fg_color="transparent",hover_color='#006400',border_width=2,border_color='#006400')
+    entertainment = CTkButton(root, text="Entertainment",
+                              command=lambda: button_grid.load_new_data("Entertainment.csv"),
+                              fg_color="transparent", hover_color='#006400', border_width=2, border_color='#006400')
     entertainment.pack(side=tk.TOP, pady=10)
 
     food = CTkButton(root, text="Food", command=lambda: button_grid.load_new_data("Food.csv"),
-                     fg_color="transparent",hover_color='#0000FF',border_width=2,border_color='#0000FF')
+                     fg_color="transparent", hover_color='#0000FF', border_width=2, border_color='#0000FF')
     food.pack(side=tk.TOP, pady=10)
 
     objects = CTkButton(root, text="Objects", command=lambda: button_grid.load_new_data("Objects.csv"),
-                        fg_color="transparent",hover_color='#DAA520',border_width=2,border_color='#DAA520')
+                        fg_color="transparent", hover_color='#DAA520', border_width=2, border_color='#DAA520')
     objects.pack(side=tk.TOP, pady=10)
 
     shuffle_button = CTkButton(root, text="Shuffle", command=button_grid.shuffle_grid,
-                               fg_color="transparent",hover_color='#800080',border_width=2,border_color='#800080')
+                               fg_color="transparent", hover_color='#800080', border_width=2, border_color='#800080')
     shuffle_button.pack(side=tk.LEFT, padx=5, pady=5)
 
     mark_solved_button = CTkButton(root, text="Submit", command=button_grid.submit,
-                               fg_color="transparent",hover_color='#008080',border_width=2,border_color='#008080')
+                                   fg_color="transparent", hover_color='#26B170', border_width=2,
+                                   border_color='#26B170')
     mark_solved_button.pack(side=tk.LEFT, padx=5, pady=5)
 
     root.mainloop()
@@ -279,4 +285,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
