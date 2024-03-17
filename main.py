@@ -95,50 +95,63 @@ class ButtonGrid(tk.Frame):
         self.dark_gray_buttons.clear()
         self.update_grid_state()
 
-
     def submit(self):
+        # if all buttons are disabled (i.e. all buttons have been solved), return
         if all(button.disabled for button in self.buttons):
             return
 
-
+        # Clear the message label of any previous messages
         self.message_label.config(text="")
+
+        # get selected buttons in the grid
         selected_buttons = [button for button in self.buttons if button.color == 'dark gray']
+
+        # Check if exactly 4 buttons are selected
         if len(selected_buttons) == 4:
-            # Check if selected buttons are part of the same category
+            # get the names of the 4 selected buttons
             selected_names = [button.name for button in selected_buttons]
+
+            found = bool(False)
+
+            # check for matches or one away
             for category, names in self.grid_data.items():
-                if len(set(names).intersection(set(selected_names))) == 3:
-                    # Update the message label
+
+                # check if all 4 selected buttons are of same category
+                if set(names) == set(selected_names):
+
+                    # Mark selected buttons as solved and move them to the top of the buttons list
+                    solved_color = next(self.solved_colors)
+                    for button in selected_buttons:
+                        button.mark_solved(solved_color)
+                        self.buttons.remove(button)
+                        self.buttons.insert(0, button)
+
+                    # print category solved
+                    self.message_label.config(text=f"Solved Category \"{category}\"")
+                    # Update grid state
+                    self.update_grid_state()
+                    found = True
+                    break
+
+                # check if only 3 of the 4 selected buttons are of same category
+                # if yes, update the message label and break the loop
+                elif len(set(names).intersection(set(selected_names))) == 3:
                     self.message_label.config(text="One Away...")
                     break
-        elif len(selected_buttons) != 4:
+
+            # if neither a full match nor a one away are made, reduce mistakes left by 1 and update the mistakes label
+            if not found:
+                self.mistakes_left -= 1
+                print("Selected buttons are not part of the same category.")
+                self.mistakes_label.config(text=f"Mistakes left: {self.mistakes_left}")
+
+        else:
             print("Please select exactly 4 buttons.")
             return
 
-        # Check if selected buttons are part of the same category
-        selected_names = [button.name for button in selected_buttons]
-        for category, names in self.grid_data.items():
-            if set(names) == set(selected_names):
-
-                # Mark selected buttons as solved and move them to the top of the buttons list
-                solved_color = next(self.solved_colors)
-                for button in selected_buttons:
-                    button.mark_solved(solved_color)
-                    self.buttons.remove(button)
-                    self.buttons.insert(0, button)
-
-                # print category solved
-                self.message_label.config(text=f"Solved Category \"{category}\"")
-                # Update grid state
-                self.update_grid_state()
-
-                break
-        else:
-            self.mistakes_left -= 1
-            print("Selected buttons are not part of the same category.")
-            self.mistakes_label.config(text=f"Mistakes left: {self.mistakes_left}")
-
+        # check for game over or game won conditions
         if self.mistakes_left <= 0:
+            # print losing message
             self.message_label.config(text=f"Game Over: You lost!\nCategories: {list(self.grid_data.keys())}")
             # Solve the remaining sets of unsolved buttons
             for category, names in self.grid_data.items():
@@ -151,9 +164,8 @@ class ButtonGrid(tk.Frame):
                         self.buttons.append(button)  # Add unsolved buttons to the end of the list
             self.update_grid_state()
         elif all(button.disabled for button in self.buttons):
+            # print winning message
             self.message_label.config(text="Congratulations! You won!")
-
-        return
 
     def load_new_data(self, new_filepath):
         # Clear existing buttons from the grid
@@ -213,18 +225,20 @@ def read_csv_file(filepath):
 
     return new_category_mapping
 
+
 def main():
     root = tk.Tk()
     root.title("Button Grid")
     grid_data = read_csv_file('Objects.csv')
 
     button_grid = ButtonGrid(root, grid_data)
-    button_grid.pack(side = tk.RIGHT,padx=10, pady=10)
+    button_grid.pack(side=tk.RIGHT, padx=10, pady=10)
 
     animal = tk.Button(root, text="Animals", command=lambda: button_grid.load_new_data("Animals.csv"))
     animal.pack(side=tk.TOP, pady=10)
 
-    entertainment = tk.Button(root, text="Entertainment", command=lambda: button_grid.load_new_data("Entertainment.csv"))
+    entertainment = tk.Button(root, text="Entertainment",
+                              command=lambda: button_grid.load_new_data("Entertainment.csv"))
     entertainment.pack(side=tk.TOP, pady=10)
 
     food = tk.Button(root, text="Food", command=lambda: button_grid.load_new_data("Food.csv"))
@@ -241,6 +255,6 @@ def main():
 
     root.mainloop()
 
+
 if __name__ == "__main__":
     main()
-
