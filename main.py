@@ -3,6 +3,7 @@ import random
 from itertools import cycle
 import numpy as np
 import csv
+from customtkinter import *
 
 
 class GameButton(tk.Button):
@@ -241,30 +242,36 @@ def read_csv_file(filepath):
 
 
 def main():
-    root = tk.Tk()
+    root = CTk()
     root.title("Button Grid")
     grid_data = read_csv_file('Objects.csv')
+    set_appearance_mode("dark")
 
     button_grid = ButtonGrid(root, grid_data)
     button_grid.pack(side=tk.RIGHT, padx=10, pady=10)
 
-    animal = tk.Button(root, text="Animals", command=lambda: button_grid.load_new_data("Animals.csv"))
+    animal = CTkButton(root, text="Animals", command=lambda: button_grid.load_new_data("Animals.csv"),
+                       fg_color="transparent",hover_color='#8B0000',border_width=2,border_color='#8B0000')
     animal.pack(side=tk.TOP, pady=10)
 
-    entertainment = tk.Button(root, text="Entertainment",
-                              command=lambda: button_grid.load_new_data("Entertainment.csv"))
+    entertainment = CTkButton(root, text="Entertainment", command=lambda: button_grid.load_new_data("Entertainment.csv"),
+                              fg_color="transparent",hover_color='#006400',border_width=2,border_color='#006400')
     entertainment.pack(side=tk.TOP, pady=10)
 
-    food = tk.Button(root, text="Food", command=lambda: button_grid.load_new_data("Food.csv"))
+    food = CTkButton(root, text="Food", command=lambda: button_grid.load_new_data("Food.csv"),
+                     fg_color="transparent",hover_color='#0000FF',border_width=2,border_color='#0000FF')
     food.pack(side=tk.TOP, pady=10)
 
-    objects = tk.Button(root, text="Objects", command=lambda: button_grid.load_new_data("Objects.csv"))
+    objects = CTkButton(root, text="Objects", command=lambda: button_grid.load_new_data("Objects.csv"),
+                        fg_color="transparent",hover_color='#DAA520',border_width=2,border_color='#DAA520')
     objects.pack(side=tk.TOP, pady=10)
 
-    shuffle_button = tk.Button(root, text="Shuffle", command=button_grid.shuffle_grid)
+    shuffle_button = CTkButton(root, text="Shuffle", command=button_grid.shuffle_grid,
+                               fg_color="transparent",hover_color='#800080',border_width=2,border_color='#800080')
     shuffle_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-    mark_solved_button = tk.Button(root, text="Submit", command=button_grid.submit)
+    mark_solved_button = CTkButton(root, text="Submit", command=button_grid.submit,
+                               fg_color="transparent",hover_color='#008080',border_width=2,border_color='#008080')
     mark_solved_button.pack(side=tk.LEFT, padx=5, pady=5)
 
     root.mainloop()
@@ -272,3 +279,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
