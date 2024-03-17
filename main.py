@@ -153,7 +153,7 @@ class ButtonGrid(tk.Frame):
         elif all(button.disabled for button in self.buttons):
 
             # print winning message
-            self.message_label.config(text="Congratulations! You won!")
+            self.message_label.config(text=f"Congratulations! You won!\nCategories: {list(self.grid_data.keys())}")
 
     def submit(self):
         # if all buttons are disabled (i.e. all buttons have been solved), return
