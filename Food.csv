@@ -12,12 +12,10 @@ BREAD,White bread,Whole wheat bread,Bagel,Croissant
 WAFFLE,Belgian waffle,Buttermilk waffle,Chocolate waffle,Fruit waffle
 VEGETABLE,Carrot,Broccoli,Spinach,Potato
 QUESADILLA,Cheese quesadilla,Chicken quesadilla,Veggie quesadilla,Steak quesadilla
-PASTRY,Croissant,Donut,Danish,Eclair
 RUM,White,Dark,Spiced,Coconut
 GIN,London,tonic,Tom Collins,Gimlet
 WHISKEY,Scotch,Bourbon,Rye,Irish whiskey
 TACO,Beef taco,Chicken taco,Fish taco,Veggie taco
-SALAD,Caesar,Greek,Cobb,Spinach
 COOKIE,Chocolatechip,Sugar,Oatmeal,Snickerdoodle
 NOODLES,Pad thai,Lo mein,Chow mein,Singapore noodles
 UDON,Tempura udon,Kitsune udon,Beef udon,Chicken udon
@@ -27,27 +25,19 @@ SODA,Cola,Root beer,Lemon-lime,Orange
 CHAMPAGNE,Brut,Extra dry,Rose,Demi-sec
 NACHOS,Beef nachos,Chicken nachos,Veggie nachos,Loaded nachos
 DRINK,Water,Juice,Soda,Tea
-FRUIT,Apple,Banana,Orange,Grape
 DESSERT,Cake,Chocolate,Ice cream,Pie
 GUACAMOLE,Traditional guacamole,Chunky guacamole,Spicy guacamole,Mango guacamole
-RICE,White,Brown,Fried,Arborio
 RAMEN,Shoyu ramen,Miso ramen,Shio ramen,Tonkotsu ramen
-JUICE,Orange,Apple,Grape,Cranberry
 MEAT,Beef,Chicken,Pork,Fish
 SUSHI,Sashimi,Maki,Nigiri,California roll
-WINE,Red,White,Rose,Sparkling
 SANDWICH,Hamburger,Cheeseburger,Club sandwich,Submarine sandwich
 SOBA,Tempura soba,Kitsune soba,Beef soba,Chicken soba
-PIZZA,Cheese,Pepperoni,Hawaiian,Vegetarian
 BURRITO,Beef burrito,Chicken burrito,Veggie burrito,Fish burrito
 DIM SUM,Shumai,Siu mai,Har gow,Char siu bao
 MILKSHAKE,Chocolate milkshake,Vanilla milkshake,Strawberry milkshake,Oreo milkshake
 ENCHILADA,Beef enchilada,Chicken enchilada,Cheese enchilada,Spinach enchilada
 BUBBLE TEA,Classic milk tea,Taro bubble tea,Matcha bubble tea,Mango bubble tea
-VODKA,Plain,Flavored,martini,tonic
 CAKE,Birthday,Wedding,Cupcake,Red velvet
-BURGER,Cheeseburger,Hamburger,Veggie burger,Bacon burger
-SOUP,Chicken,Tomato,Minestrone,Clam
 PIE,Apple pie,Pumpkin pie,Blueberry pie,Pecan pie
 CHIPS,Tortilla chips,Potato chips,Corn chips,Kale chips
 BEER,IPA,Pilsner,Stout,Lager
