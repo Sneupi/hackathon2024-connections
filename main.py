@@ -9,7 +9,7 @@ from customtkinter import *
 class GameButton(tk.Button):
     def __init__(self, master, row, col, name, color='#242424', disabled=False):
         super().__init__(master, text=name, command=self.toggle_color, width=15, height=6, fg='white',
-                         font=('Arial', 20), activebackground=color, activeforeground='white', bd=0)
+                         font=('Arial', 18), activebackground=color, activeforeground='white', bd=0)
         self.row = row
         self.col = col
         self.name = name
@@ -51,10 +51,10 @@ class ButtonGrid(tk.Frame):
 
         self.mistakes_label = tk.Label(self, text=f"Mistakes left: {self.mistakes_left}")
         self.mistakes_label.grid(row=0, column=0, columnspan=4)
-        self.mistakes_label.config(bg='#242424', fg='white', font=('Arial', 25))
+        self.mistakes_label.config(bg='#242424', fg='white', font=('Arial', 18))
         self.message_label = tk.Label(self)
         self.message_label.grid(row=1, column=0, columnspan=4)
-        self.message_label.config(bg='#242424', fg='white', font=('Arial', 25))
+        self.message_label.config(bg='#242424', fg='white', font=('Arial', 18))
 
         self.shuffle_grid()
 
@@ -254,36 +254,36 @@ def main():
     button_grid = ButtonGrid(root, grid_data)
     button_grid.pack(side=tk.RIGHT, padx=10, fill=tk.BOTH, expand=True, pady=10)
 
-    theme_label = tk.Label(root, text="Pick a Theme", bg='#242424', fg='white', font=('Arial', 25))
+    theme_label = tk.Label(root, text="Pick a Theme", bg='#242424', fg='white', font=('Arial', 18))
     theme_label.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=10)
 
-    animal = CTkButton(root, text="Animals", command=lambda: button_grid.load_new_data("Animals.csv"),
+    animal = CTkButton(root, text="Animals", font=('Arial', 18), command=lambda: button_grid.load_new_data("Animals.csv"),
                        fg_color="transparent", hover_color='#484848', border_width=2, border_color='#484848')
     animal.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=10)
 
-    entertainment = CTkButton(root, text="Entertainment",
+    entertainment = CTkButton(root, text="Entertainment", font=('Arial', 18),
                               command=lambda: button_grid.load_new_data("Entertainment.csv"),
                               fg_color="transparent", hover_color='#484848', border_width=2, border_color='#484848')
     entertainment.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)
 
-    food = CTkButton(root, text="Food", command=lambda: button_grid.load_new_data("Food.csv"),
+    food = CTkButton(root, text="Food", font=('Arial', 18), command=lambda: button_grid.load_new_data("Food.csv"),
                      fg_color="transparent", hover_color='#484848', border_width=2, border_color='#484848')
     food.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)
 
-    objects = CTkButton(root, text="Objects", command=lambda: button_grid.load_new_data("Objects.csv"),
+    objects = CTkButton(root, text="Objects", font=('Arial', 18), command=lambda: button_grid.load_new_data("Objects.csv"),
                         fg_color="transparent", hover_color='#484848', border_width=2, border_color='#484848')
     objects.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)
 
-    options_label = tk.Label(root, text="Player Options", bg='#242424', fg='white', font=('Arial', 25))
+    options_label = tk.Label(root, text="Player Options", bg='#242424', fg='white', font=('Arial', 18))
     options_label.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)  # Reduced padding
 
     shuffle_button = CTkButton(root, text="Shuffle", command=button_grid.shuffle_grid,
-                               fg_color="transparent", hover_color='#800080', border_width=2, border_color='#800080')
+                               fg_color="transparent", hover_color='#800080', border_width=2, border_color='#800080', font=('Arial', 18))
     shuffle_button.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)  # Packed to the top
 
     mark_solved_button = CTkButton(root, text="Submit", command=button_grid.submit,
                                    fg_color="transparent", hover_color='#26B170', border_width=2,
-                                   border_color='#26B170')
+                                   border_color='#26B170', font=('Arial', 18))
     mark_solved_button.pack(side=tk.TOP, fill=tk.BOTH, expand=True, pady=5)  # Packed to the top
 
     root.resizable(False, False)
