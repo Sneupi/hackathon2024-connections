@@ -10,6 +10,8 @@ Runs only for Windows OS
 4. Install packages as required (See imports at top of “main.py”)
 5. Run “main.py”
 
+# Video Demo
+https://youtu.be/Mjdj1lj9fqo?t=57
 
 # Slideshow
 
